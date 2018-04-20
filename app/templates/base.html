@@ -1,4 +1,4 @@
-{% extends 'bootstrap/base.html' %}
+{% extends 'bootstrap/base.html'%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,9 +8,10 @@
     <title>Document</title>
 </head>
 <body>
-    {%navbar block %}
-        {% include 'includes/_navbar.html'%}
-    {% endblock %}        
+    {% block navbar %}
+        {% include 'includes/_navbar.html' %}
+    {% endblock %}  
+    
     {% block content%}
     {%endblock%}
 </body>
