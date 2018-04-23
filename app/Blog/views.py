@@ -3,5 +3,5 @@ from flask import render_template
 
 @blog.route('/blog')
 def index():
-    return render_template('blog/blog.html')
+    return render_template('blog/blog.html', active = 'blog')
 
