@@ -17,8 +17,12 @@
             <li class="{% if active=='contact' %}active{%endif %}"><a href="/contact">Contact</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li class="{% if active=='login' %}active{%endif %}"><a href="/login">Login</a></li>
-            <li class="{% if active=='signup' %}active{%endif %}"><a href="/signup">Sign up</a></li>
+            {% if current_user.is_authenticated%}
+              <li class="{% if active=='login' %}active{%endif %}"><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+            {% else %}
+              <li class="{% if active=='login' %}active{%endif %}"><a href="/login">Login</a></li>
+              <li class="{% if active=='signup' %}active{%endif %}"><a href="/signup">Sign up</a></li>
+            {% endif %}
           </ul>
         </div><!--/.nav-collapse -->
       </div>

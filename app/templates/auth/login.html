@@ -5,5 +5,12 @@
         <h1>LOG IN</h1>
         <hr>
         {{ wtf.quick_form(login)}}
+        <br>    
+        <p>
+            New user?
+            <a href="{{ url_for('auth.signup') }}">
+                Click here to register
+            </a>
+        </p>
     </div>
 {%endblock%}
