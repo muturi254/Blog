@@ -1,6 +1,7 @@
-from . import main
+from . import blog
+from flask import render_template
 
-@main.route('/')
+@blog.route('/blog')
 def index():
-    return '<h1> Hello World </h1>'
+    return render_template('blog/blog.html')
 
