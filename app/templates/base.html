@@ -1,28 +1,18 @@
-{% extends 'bootstrap/base.html'%}
+{% extends 'bootstrap/base.html' %}
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    {% block styles%}
-        <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Lobster|Roboto+Condensed" rel="stylesheet">
-        {{ super()}}
-        <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}">
-        <style>
-            body h1{
-                font-family: 'Abril Fatface', sans-serif;
-            }
-        </style>
-    {% endblock     %}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
 </head>
 <body>
     {% block navbar %}
-        {% include 'includes/_navbar.html' %}
-    {% endblock %}  
-    
-    {% block content%}
+        {%include 'includes/_navbar.html'%}
     {%endblock%}
+    {% block content %} {% endblock %}
 </body>
 </html>
