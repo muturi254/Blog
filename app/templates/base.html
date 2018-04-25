@@ -8,6 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% block styles%}
         {{ super()}}
+         <!--Importing the simple mde css and js files  -->
+        {{ simplemde.css}}
+        {{ simplemde.js }}
         <link rel="shortcut icon" href="{{url_for('static', filename='images/favicon.ico')}}" type="image/x-icon">
     {%endblock%}
     

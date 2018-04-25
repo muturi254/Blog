@@ -1,10 +1,13 @@
 from . import main
 from flask import render_template
 from .forms import ContactForm
+from .. import db
+from ..models import Post
 
 @main.route('/')
 def index():
-    return render_template('index.html', active = 'home')
+    posts = Post.query.order_by(Post.timestamp.desc()).all()
+    return render_template('index.html', active = 'home', posts=posts)
 
 @main.route('/contact')
 def contact():

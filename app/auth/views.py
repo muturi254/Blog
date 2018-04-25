@@ -26,8 +26,9 @@ def signup():
         user = User(firstname = signup.firstname.data, lastname = signup.lastname.data, username= signup.username.data, email = signup.email.data, password = signup.password.data)
         db.session.add(user)
         db.session.commit()
+        flash('New user created enter credentials.')
+
         return redirect(url_for('auth.login'))
-    flash('New user created enter credentials.')
         
     return render_template('auth/signup.html', signup= signup, active = 'signup')
 

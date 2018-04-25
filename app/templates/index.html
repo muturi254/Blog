@@ -4,5 +4,14 @@
         <h1>HOME</h1>
 
          Hello, {% if current_user.is_authenticated %} {{ current_user.username }} {% else %} Stranger {% endif %}!
+        <div class="row">
+        {% for post in posts%}
+            
+                <div class="col-md-4">
+                    <li>{{post.body}}</li>
+                </div>           
+        {%endfor%}
+        </div>
+        
     </div>
 {% endblock %}
